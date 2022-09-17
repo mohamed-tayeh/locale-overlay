@@ -33,6 +33,7 @@ let configs = (function () {
   // Time icon dimensions
   const timeHeight = '24px';
   const timeWidth = '24px';
+
   // If you would like the icons to be on top of each other or next to each other
   const direction = 'column'; // column or row
 
