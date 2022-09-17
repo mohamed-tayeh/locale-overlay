@@ -1,0 +1,78 @@
+:root {
+  --height: 132px;
+  --width: 248px;
+
+  --location-height: 30px;
+  --location-width: 24px;
+
+  --date-height: 24px;
+  --date-width: 24px;
+
+  --time-height: 24px;
+  --time-width: 24px;
+
+  --direction: 'column';
+  --font-color: 'white';
+  --font-size: '24px';
+  --font-family: 'Poppins';
+
+  --background-opacity: 0;
+  --background-red: 0;
+  --background-green: 0;
+  --background-blue: 0;
+  --background-roundness: 0px;
+
+  --text-margin-top: 1px;
+}
+
+html {
+  width: var(--width);
+  height: var(--height);
+
+  background: rgba(
+    var(--background-red),
+    var(--background-green),
+    var(--background-blue),
+    var(--background-opacity)
+  );
+  border-radius: var(--background-roundness);
+}
+
+body {
+  display: flex;
+  flex-direction: var(--direction);
+  justify-content: space-evenly;
+
+  height: 100%;
+  width: 100%;
+
+  color: var(--font-color);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+#location,
+#date,
+#time {
+  display: flex;
+}
+
+#location .icon {
+  height: var(--location-height);
+  width: var(--location-width);
+}
+
+#date .icon {
+  height: var(--date-height);
+  width: var(--date-width);
+}
+
+#time .icon {
+  height: var(--time-height);
+  width: var(--time-width);
+}
+
+.value {
+  margin-top: var(--text-margin-top);
+  margin-left: 20px;
+}
