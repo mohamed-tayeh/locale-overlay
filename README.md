@@ -41,4 +41,4 @@ Please star the repository on the top right:) If you don't have an account, you 
 If you would like to make a link for attribution, feel free to link this page or [my twitch stream].
 
 [google fonts]: https://fonts.google.com/
-[my twitch stream]: https://www.twitch.tv/moh__t
+[my twitch stream]: https://www.twitch.tv/mohfocus
