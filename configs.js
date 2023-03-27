@@ -13,7 +13,7 @@ let configs = (function () {
   // Under "TZ database name" column in the table
   const timezone = 'America/Toronto';
 
-  // List of all locales (column "639-1"): https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+  // List of all language codes (column "639-1"): https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
   const language = 'en';
   const dateFormat = 'dd.MM.yyyy';
   // Formats:
