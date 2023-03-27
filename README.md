@@ -21,7 +21,49 @@ Features:
 3. Choose `locale.html`
    ![image](media/obsScreenshot.png)
 
-## Configuration (styling)
+## Configuration
+
+### Date Time formats
+
+Date Formats:
+
+```javascript
+const dateFormat = 'dd.MM.yyyy';
+```
+
+- d.M.yyyy - 6.3.2023
+- d.MM.yyyy - 6.03.2023
+- dd.MM.yyyy - 06.03.2023
+- dd MMM yyyy - 06 Mar 2023
+- dd MMMM yyyy - 06 March 2023
+- EEE dd MMM yyyy - Mon 06 March 2023
+
+Language:
+
+```javascript
+const language = 'en';
+```
+
+- This would change the language of the widget.
+- List of all locales [(column "639-1")](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+- E.g. french would be `fr`
+- The date format of `EEE dd MMM yyyy` would be `Lun. 27 Mars 2023`
+
+> Make sure you are chaning the height and widths for it not to overflow to the next lines.
+
+Time Formats:
+
+```javascript
+const timeFormat = 'dd.MM.yyyy';
+```
+
+- HH:mm - 16:37
+- HH:mm:ss - 16:37:46
+- hh:mm a - 4:37 PM
+- hh:mm - 4:37
+- hh:mm ZZZZ - 4:37 EST
+
+[All the date time tokens/formats](https://github.com/moment/luxon/blob/master/docs/formatting.md#table-of-tokens)
 
 ### Styling
 
