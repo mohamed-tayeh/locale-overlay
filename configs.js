@@ -12,7 +12,29 @@ let configs = (function () {
   // Timezone must be from this list: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   // Under "TZ database name" column in the table
   const timezone = 'America/Toronto';
-  const secondOn = false; // `hh:mm:ss` or `hh:mm`
+
+  // List of all locales (column "639-1"): https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+  const language = 'en';
+  const dateFormat = 'dd.MM.yyyy';
+  // Formats:
+  // d.M.yyyy - 6.3.2023
+  // d.MM.yyyy - 6.03.2023
+  // dd.MM.yyyy - 06.03.2023
+  // dd MMM yyyy - 06 Mar 2023
+  // dd MMMM yyyy - 06 March 2023
+  // EEE dd MMM yyyy - Mon 06 March 2023
+  // you can change the "." to any character
+
+  const timeFormat = 'HH:mm';
+  // Formats:
+  // HH:mm - 16:37
+  // HH:mm:ss - 16:37:46
+  // hh:mm a - 4:37 PM
+  // hh:mm - 4:37
+  // hh:mm ZZZZ - 4:37 EST
+  // you can change the ":" to any character
+
+  // All possible tokens/symbols: https://github.com/moment/luxon/blob/master/docs/formatting.md#table-of-tokens
 
   const textMarginTop = '1px'; // used to ensure that the text is centered with images
 
@@ -53,10 +75,12 @@ let configs = (function () {
   const settings = {
     location,
     timezone,
-    secondOn,
     locationImg,
     dateImg,
     timeImg,
+    language,
+    dateFormat,
+    timeFormat,
   };
 
   const styles = {

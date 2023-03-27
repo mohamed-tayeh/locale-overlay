@@ -2,6 +2,10 @@
   'use strict';
 
   const settings = configs.settings;
+  const dateFormat = settings.dateFormat;
+  const timeFormat = settings.timeFormat;
+  const dateValue = document.querySelector('#date .value');
+  const timeValue = document.querySelector('#time .value');
 
   /**
    * Updates the overlay with the settings on load
@@ -30,40 +34,18 @@
    */
   function updateLocation() {
     const locationValue = document.querySelector('#location .value');
-    locationValue.innerHTML = settings.location;
+    locationValue.textContent = settings.location;
   }
 
   /**
    * Updates date and time based on timezone entered by the user
    */
   function updateDateTime() {
-    const dateValue = document.querySelector('#date .value');
-    const timeValue = document.querySelector('#time .value');
-
     const dateTimeObj = luxon.DateTime.now()
       .setZone(settings.timezone)
-      .toObject();
-
-    let { hour, minute, second, day, month, year } = dateTimeObj;
-
-    hour = hour.toString();
-    minute = minute.toString();
-    second = second.toString();
-
-    dateValue.innerHTML = day + '.' + month + '.' + year;
-
-    if (hour.length === 1) hour = '0' + hour;
-    if (minute.length === 1) minute = '0' + minute;
-    if (second.length === 1) {
-      second = '0' + second;
-    }
-
-    if (settings.secondOn) {
-      timeValue.innerHTML = hour + ':' + minute + ':' + second;
-    } else {
-      timeValue.innerHTML = hour + ':' + minute;
-    }
-
+      .setLocale(settings.language);
+    dateValue.textContent = dateTimeObj.toFormat(dateFormat);
+    timeValue.textContent = dateTimeObj.toFormat(timeFormat);
     setTimeout(updateDateTime, 1000);
   }
 
